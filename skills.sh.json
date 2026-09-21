@@ -6,6 +6,11 @@
       "title": "Frontend Engineering",
       "description": "Skills for product UI foundations and implementation.",
       "skills": ["design-system-engineering"]
+    },
+    {
+      "title": "Product Design",
+      "description": "Skills for product/UX architecture, spec-driven UI design, and visual QA.",
+      "skills": ["design-engineering"]
     }
   ]
 }
