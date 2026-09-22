@@ -1,6 +1,6 @@
 # Screen Specification Template
 
-One file per screen: `design/screens/SCR-xxx-name.md`. This is the contract: generative tools, implementers, and QA are all bound to it. Anything not listed here that appears in output is a hallucination; anything listed here that is missing is a defect.
+One file per screen: `design/screens/SCR-xxx-name.md`. This is the contract for renderers, implementers, and QA. Missing required product behavior is a defect; approved design-system defaults, semantics, focus behavior, and platform plumbing belong in **Allowed baseline**.
 
 ```markdown
 # SCR-000 — <Screen name>
@@ -9,6 +9,11 @@ One file per screen: `design/screens/SCR-xxx-name.md`. This is the contract: gen
 - Role(s): <who can see it>
 - Priority: P0/P1/P2
 - Spec version: v1 (date)
+- Requirement sources: <PRD/story/API/reference>
+
+## User and entry context
+- Primary user: <role, goal, constraints>
+- Entry point and preconditions: <route, prior action, permission/data>
 
 ## Purpose
 <What the user accomplishes here, one sentence.>
@@ -23,12 +28,12 @@ One file per screen: `design/screens/SCR-xxx-name.md`. This is the contract: gen
 - <action>: <trigger> → <result>
 
 ## States
-- loading: …
-- empty: …
-- loaded: …
-- partial data / degraded: …
-- permission denied: …
-- error: …
+- loading: <behavior> | N/A: <reason>
+- empty: <behavior> | N/A: <reason>
+- loaded: <behavior> | N/A: <reason>
+- partial data / degraded: <behavior> | N/A: <reason>
+- permission denied: <behavior> | N/A: <reason>
+- error: <behavior and recovery> | N/A: <reason>
 
 ## Responsive behavior
 - <breakpoint>: <what collapses / moves / persists>
@@ -39,9 +44,21 @@ One file per screen: `design/screens/SCR-xxx-name.md`. This is the contract: gen
 ## Data requirements
 - <entities/fields this screen consumes; where they come from>
 
-## PROHIBITED
+## Allowed baseline
+- Approved components/tokens: <names or source>
+- Necessary semantic, focus, screen-reader, and platform behavior: <what is allowed>
+
+## Decision-required items
+- <owner>: <question, status>
+
+## PROHIBITED product changes
 - No <invented widgets / metrics / AI features / nav items / attributes>
-- No <anything else not in spec>
+- No <behavior or content beyond the approved spec or allowed baseline>
+
+## Acceptance evidence
+| Requirement | Evidence | Status |
+|---|---|---|
+| <spec item> | <screenshot, runtime check, or review> | Planned |
 ```
 
 ## Component tree (handoff format)

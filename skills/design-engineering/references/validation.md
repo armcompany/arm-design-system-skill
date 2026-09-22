@@ -2,7 +2,7 @@
 
 ## Why
 
-Generative UI tools confidently invent features, metrics, and navigation. The failure mode is silent: output *looks* plausible, so violations slip in unless you diff output against spec mechanically. Validation is comparison against the Screen Spec, not aesthetic judgment.
+Generative UI tools confidently invent features, metrics, and navigation. The failure mode is silent: output *looks* plausible, so violations slip in unless each requirement is traced to evidence. Validation is comparison against the Screen Spec, not aesthetic judgment.
 
 ## Stitch / generative tool rules
 
@@ -38,7 +38,7 @@ Hallucination signals → bypass the tool and implement directly:
 
 ```markdown
 SCREEN: SCR-003
-FIDELITY: PASS | FAIL
+FIDELITY: PASS | FAIL | WAIVED | NOT RUN
 ISSUES:
 - [CRITICAL] INVENTED_ELEMENT: "Property Valuation" widget — not in spec.
 - [HIGH] MISSING_REQUIRED_ELEMENT: Timeline action absent.
@@ -47,6 +47,17 @@ ACTION: REGENERATE | CORRECT | ACCEPT
 ```
 
 Severity guide: CRITICAL = invented/dropped requirement or business rule; HIGH = missing required element, nav/structure change; MEDIUM = design-system or responsive deviation; LOW = polish.
+
+## Acceptance rules
+
+Add a traceability table: `screen-spec requirement | evidence | PASS / FAIL / NOT RUN`.
+
+- **PASS:** all required rows have evidence and no CRITICAL/HIGH issue remains.
+- **FAIL:** a required row is missing, contradicted, or has an open CRITICAL/HIGH issue.
+- **WAIVED:** a named owner records rationale, affected scope, and review point; it cannot silently change behavior, permissions, security, or policy.
+- **NOT RUN:** evidence could not be collected; report why instead of implying a pass.
+
+Approved design-system components/tokens and necessary semantic, focus, screen-reader, or platform plumbing are allowed when named in the Screen Spec. Unexpected product content, behavior, navigation, or information architecture remains an `INVENTED_ELEMENT`.
 
 ## Rejection loop
 
@@ -63,9 +74,9 @@ Never: PROMPT → GENERATE → ACCEPT.
 When browser tools exist (e.g. `webapp-testing`):
 
 1. Run the app; navigate to the screen under test.
-2. Capture screenshots at every required breakpoint.
+2. Capture screenshots at every breakpoint required by the Screen Spec.
 3. Compare against approved spec/screenshot/reference.
 4. Record each discrepancy (taxonomy above) as a correction task.
-5. Apply fixes; re-capture; repeat until clean.
+5. Create correction tasks; apply source fixes only when authorized; re-capture and repeat until clean.
 
 Checklist: spacing, alignment, typography, sizing, colors, hierarchy, missing components, incorrect components, overflow, interaction states (hover/focus/disabled/loading), responsive behavior, accessibility (tab order, focus rings, contrast, labels).

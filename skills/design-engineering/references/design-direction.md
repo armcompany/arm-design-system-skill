@@ -11,7 +11,7 @@ Define deliberately per product before styling anything: visual personality, den
 - **Developer tools**: terminal-adjacent density, monospace where appropriate, keyboard-first.
 - **Consumer/social**: imagery-forward, motion as feedback, lower density.
 
-Do not reuse one visual language across products.
+Preserve an approved shared design-system foundation, then adapt density, hierarchy, and interaction patterns to the product context. Do not apply one generic surface language indiscriminately.
 
 ## Anti-generic rules
 

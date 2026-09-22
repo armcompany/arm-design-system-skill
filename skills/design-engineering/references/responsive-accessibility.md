@@ -17,6 +17,8 @@ Complex desktop systems (GIS, ERP, dashboards) may legitimately require a deskto
 
 ## Accessibility (minimum bar)
 
+Record the applicable platform/conformance target and validation evidence. Mark an inapplicable item `N/A` with a reason in the Screen Spec or validation report.
+
 - Semantic heading/landmark hierarchy
 - Full keyboard operability; logical tab order; no keyboard traps
 - Visible focus states (not `outline: none` without replacement)
