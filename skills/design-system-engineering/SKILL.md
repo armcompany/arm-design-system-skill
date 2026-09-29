@@ -1,6 +1,6 @@
 ---
 name: design-system-engineering
-description: Use when creating, consuming, auditing, or evolving a product Design System with tokens, themes, components, accessibility contracts, Storybook, and safe migration governance.
+description: Create, audit, or evolve a product design system. Use for tokens, themes, component contracts, accessibility, Storybook, visual checks, and safe migrations; not for product-flow design.
 ---
 
 # Design System Engineering

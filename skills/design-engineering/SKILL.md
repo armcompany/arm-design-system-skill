@@ -1,6 +1,6 @@
 ---
 name: design-engineering
-description: Use when turning product requirements, existing application context, or approved visual references into an implementation-ready product design or bounded redesign. Not for audit-only reports or framework-specific implementation.
+description: Turn product requirements, existing application context, or approved references into an implementation-ready product design. Use for new flows, bounded redesigns, screen specifications, or design QA; not for implementation-only work.
 ---
 
 # Design Engineering
